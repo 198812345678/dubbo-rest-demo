@@ -1,0 +1,21 @@
+dubbo:
+  scan:
+    base-packages: com.example.will.demo
+  application:
+    name: dubbo-auto-configuration-provider-demo
+  registry:
+#      address: nacos://127.0.0.1:8848
+      address: N/A
+  protocols:
+    dubbo:
+      name: dubbo
+      port: 8083
+    rest:
+      name: rest
+      port: 8888
+      extension: com.example.will.demo.RequestHeaderFilter, com.example.will.demo.BizInterceptor
+    hessian:
+      name: hessian
+      port: 8084
+  provider:
+    filter: echo
